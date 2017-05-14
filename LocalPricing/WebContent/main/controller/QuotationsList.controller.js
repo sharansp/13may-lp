@@ -66,7 +66,14 @@ sap.ui.define([
 				id : obj.id
 //				data: obj
 			});
-		}
+		},
+		back: function(evt){
+			debugger;
+			this.getRouter().navTo("dashboard"); 
+		},
+		getRouter : function () {
+			return sap.ui.core.UIComponent.getRouterFor(this);	
+		},
 	});
  
  

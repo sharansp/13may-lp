@@ -5,7 +5,7 @@
 		<headerContent>
 			<Button icon="sap-icon://action" tooltip="Home" press="goToHome" />
 		</headerContent>
-		<IconTabBar expanded="true" id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
+		<IconTabBar expanded="true" showOverflowSelectList="true" id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
 			<items>
 				<IconTabFilter design="Horizontal" text="Setup &amp; Requirements" key="setup">
 					<core:Fragment fragmentName="sap.ui.my.main.fragment.Requirement" type="XML" />

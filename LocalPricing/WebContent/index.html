@@ -26,6 +26,8 @@
 <!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
 
 <script>
+
+	//Removing Application out of Shell
 	/*sap.ui.getCore().attachInit(
 			function() {
 				sap.ui.require([ "sap/m/Shell",
@@ -41,7 +43,7 @@
 				});
 			});*/
 
-			//Removing Application out of Shell
+			
 			sap.ui.getCore().attachInit(function(){
 					new sap.ui.core.ComponentContainer({
 						

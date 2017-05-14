@@ -58,7 +58,8 @@
                   "viewName" : "Dashboard" 
                },
                "quotation" : {
-                  "viewName" : "Quotation"
+                  "viewName" : "Quotation",
+                  "transition":"flip"
                },
                "quotations": {
                   "viewName" : "QuotationsList"

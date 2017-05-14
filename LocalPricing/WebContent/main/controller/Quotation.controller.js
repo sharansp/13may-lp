@@ -524,18 +524,24 @@ sap.ui.define([
 			this.oCostDialog.close();
 		},
 		showFullScreen: function(evt){
-			this.oView.byId("TreeTableBasic1").setVisible(false);
-			this.oView.byId("estFragment").setVisible(false);
-			this.oView.byId("costFragment").setVisible(true);
-			this.oView.byId("costNewbtn").setVisible(false);
+			// this.oView.byId("TreeTableBasic1").setVisible(false);
+			// this.oView.byId("estFragment").setVisible(false);
+			// this.oView.byId("costFragment").setVisible(true);
+			// this.oView.byId("costNewbtn").setVisible(false);
 			
 		},
 		showSmallScreen: function(evt){
-			this.oView.byId("TreeTableBasic1").setVisible(true);
-			this.oView.byId("estFragment").setVisible(true);
-			this.oView.byId("costFragment").setVisible(false);
+			// this.oView.byId("TreeTableBasic1").setVisible(true);
+			// this.oView.byId("estFragment").setVisible(true);
+			// this.oView.byId("costFragment").setVisible(false);
 			
-		}
+		},
+		back: function(evt){
+			this.getRouter().navTo("dashboard"); 
+		},
+		getRouter : function () {
+			return sap.ui.core.UIComponent.getRouterFor(this);	
+		},
 
 	});
  
