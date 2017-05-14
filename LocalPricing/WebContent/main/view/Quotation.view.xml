@@ -12,7 +12,7 @@
 				</IconTabFilter>
 				<IconTabSeparator icon="sap-icon://open-command-field" />
 				<IconTabFilter design="Horizontal" text="Structure: CLINS/Items" key="items">
-					<core:Fragment fragmentName="sap.ui.my.main.fragment.Items" type="XML" />
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Quotation.ItemsTable" type="XML" />
 				</IconTabFilter>
 				<IconTabSeparator icon="sap-icon://open-command-field" />
 				<IconTabFilter design="Horizontal" text="Price to win Bid/No-Bid" key="bid">

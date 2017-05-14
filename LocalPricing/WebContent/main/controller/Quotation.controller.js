@@ -479,6 +479,7 @@ sap.ui.define([
 			resGrid.addContent(vMain);
 		},
 		importItems: function(evt){
+			debugger;
 			var fieldList = {
 					"quoteID" : "quoteID",
 					"seq":"seq",
@@ -516,6 +517,8 @@ sap.ui.define([
 			this.callBack = function(data){
 				// do the required in this call back after getting the response
 			};
+			debugger;
+			q = this.oView.byId("idProductsTable")
 		    fileHelper.uploadFile(evt, this, fieldList,"ItemsModel", this.callBack);
 		},
 		closeCostEstimategDlg: function(evt){

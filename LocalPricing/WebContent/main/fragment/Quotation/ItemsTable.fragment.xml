@@ -1,0 +1,61 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <l:Grid defaultSpan="L12 M12 S12" width="auto" vSpacing="0" hSpacing="0" class="G_Form_Column G_Form">
+        <l:content>
+            <Table id="idProductsTable" growing="true" growingThreshold="10">
+                <headerToolbar>
+                    <OverflowToolbar id="otbSubheader">
+                        <Button icon="sap-icon://sys-add" custom:PopUpType="Product" class="gkcb" text="" tooltip="Add a new Item" press="addItem" />
+                        <ToolbarSpacer />
+                        <Button icon="sap-icon://download" class="gkcb" tooltip="Import To XLS" text="Import To XLS" press="exportData" />
+                        <Button press="includeBom" tooltip="Include BOM" text="Include BOM" />
+                        <Button press="importItems" tooltip="Include Items" text="Include Items" />
+                        <Button press="importWBS" tooltip="Include WBS" text="Include WBS" />
+                        <Button id="editButton" text="Edit" type="Transparent" press="onEdit" />
+                        <Button id="saveButton" text="Save" type="Transparent" press="onSave" visible="false" />
+                        <Button id="cancelButton" text="Cancel" type="Transparent" press="onCancel" visible="false" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Approve/Decline" />
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+                        <Text text="Item" />
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                        <Text text="Prod/Service" />
+                    </Column>
+                    <Column>
+                        <Text text="Qty" />
+                    </Column>
+                    <Column>
+                        <Text text="Unit Price" />
+                    </Column>
+                    <Column>
+                        <Text text="Amouont" />
+                    </Column>
+                    <Column>
+                        <Text text="Delivery Date" />
+                    </Column>
+                    <Column>
+                        <Text text="Remarks" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <core:Icon src="sap-icon://decline" />
+                            <ObjectIdentifier name="{ItemsModel&gt;seq}" text="{ItemsModel&gt;seq}" />
+                            <ObjectIdentifier title="{ItemsModel&gt;text}" text="{ItemsModel&gt;Product}" />
+                            <ObjectNumber number="{ItemsModel&gt;qty}" unit="{ItemsModel&gt;uom}" />
+                            <ObjectNumber width="5rem" number="{ItemsModel&gt;unitPrice}" />
+                            <ObjectNumber number="{ItemsModel&gt;extendedPrice}" />
+                            <ObjectIdentifier text="{ItemsModel&gt;deliveryDue}" />
+                            <ObjectIdentifier text="{ItemsModel&gt;status}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </l:content>
+    </l:Grid>
+</core:FragmentDefinition>
