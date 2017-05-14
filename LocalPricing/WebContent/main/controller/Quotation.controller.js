@@ -552,7 +552,11 @@ sap.ui.define([
 		**/
 		onSelectRB_NewQuote: function (evt) {
 			var oInput = this.oView.byId("idAddDescriptionInput");
-			oInput.setVisible(true);
+			//var oRB_NewQuote = this.oView.byId("idRB_NewQuote");
+			if(evt.getParameter('selected'))
+				oInput.setVisible(true);
+			else
+				oInput.setVisible(false);
 		},
 
 	});

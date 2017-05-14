@@ -28,7 +28,10 @@
 					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
 						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="1" columnsM="1" class="editableForm rm-bd"
 					>
-						<RadioButton text="Create New Quotation" select="onSelectRB_NewQuote"/>
+						<RadioButton 
+							id="idRB_NewQuote"
+							text="Create New Quotation" 
+							select="onSelectRB_NewQuote"/>
 
 						<!-- <Label text="Add Description"/> -->
 						<Input
