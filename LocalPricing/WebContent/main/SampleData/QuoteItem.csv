@@ -1,0 +1,13 @@
+quoteID,seq,id,product,text,remarks,reference,qty,unit,unitPrice,extendedPrice,discountPerc,discount,taxPerc,tax,shippingPerc,shipping,handlingPerc,handling,netPrice,deliveryDue,start,end,distribution,deliveries,subscription,term,evaluation,pricingRemarks,rom,paramFields,parameters
+1234,10,1,Bus revenue implementation,Revenue management project,,,1,EA,"$2,400,000 ","$2,400,000 ",10%,"$240,000 ",8%,,,,,,,12/31/2017,,,,,,,,,,,
+1234,20,2,Revenue mgmt subscription,Back office payment system,,,1,EA,"$400,000 ","$400,000 ",10%,"$40,000 ",8%,,,,,,,12/31/2017,1/1/2018,12/31/2023,,,X,72,,,,,
+1234,30,3,Ticket Machine - X200,Ticket machines,,,50,EA,"$45,000 ","$2,250,000 ",10%,"$225,000 ",8%,,,,,,,12/31/2017,,,,,,,,,,,
+1234,40,4,Bus card reader - Y34,Bus readers,,,200,EA,$800 ,"$160,000 ",10%,"$16,000 ",8%,,,,,,,12/31/2017,,,,,,,,,,,
+1234,50,5,NextBus implementation,NextBus project,,,1,EA,"$5,000,000 ","$5,000,000 ",10%,"$500,000 ",8%,,,,,,,12/31/2017,,,,,,,,,,,
+1234,60,6,NextBus subscription,Bus prediction solution,,,1,EA,"$1,000,000 ","$1,000,000 ",10%,"$100,000 ",8%,,,,,,,12/31/2017,1/1/2018,12/31/2023,,,X,72,,,,,
+1234,70,7,NextBus bus stop screen readers - T23,Displays for showing bus arrivals,,,2000,EA,"$1,500 ","$3,000,000 ",10%,"$300,000 ",8%,,,,,,,12/31/2017,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

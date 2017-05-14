@@ -1,0 +1,68 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+
+	<Dialog contentWidth="90%" contentHeight="60%" showHeader="true" title="Details for Create Sekleton(skeleton)"
+		id="sklDlg">
+		
+				<IconTabBar expanded="true" id="idIconTabBar" select="handleIconTabBarSelect"
+			class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter 
+					design="Horizontal" text="Key Infp" key="setup">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.KeyInfo"
+						type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+
+				<IconTabFilter 
+					design="Horizontal" text="SUCCESSOR" key="items">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Successor"
+						type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				
+				<IconTabFilter 
+					design="Horizontal" text="Notify" key="bid">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Notify"
+						type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+ 
+				<IconTabFilter 
+					design="Horizontal" text="Remainders" key="plan" >
+				  <Text  text="coming soon..." />
+ 				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+
+				<IconTabFilter 
+					design="Horizontal" text="Parallel Steps" key="esitmate" >
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Parellel"
+						type="XML" />
+					</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+
+				<IconTabFilter 
+					design="Horizontal" text="Input Form" key="cost" >
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Inputs"
+						type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+
+				<IconTabFilter 
+					design="Horizontal" text="Adavnced" key="pricing" >
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Advanced"
+						type="XML" />
+					</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+
+
+			</items>
+		</IconTabBar>
+
+		<buttons>
+			<Button press="closeSkelteonDlg" text="Close" />
+		</buttons>
+		
+	</Dialog>
+</core:FragmentDefinition>

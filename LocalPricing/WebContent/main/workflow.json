@@ -1,0 +1,72 @@
+ {
+	"phases" : [
+		{
+		 "columns":[
+				{
+					"ownerId": "123",
+					"struct1":[
+						{
+							"text":"Create Skeleton Structure",
+							"copy":"true",
+							"tastText":"Complete",
+							"taskDate":"20170403",
+							"success":"true",
+							"errors":"false",
+							"schedule": "false"
+						},
+						{
+							"text":"Release to Cost Estimating",
+							"copy":"true",
+							"tastText":"Complete",
+							"taskDate":"20170403",
+							"success":"true",
+							"errors":"false",
+							"schedule": "false"
+						}
+					 ]
+				},
+				{
+					"ownerId": "Team: John &amp Mary",
+					"struct1":[
+						
+					 ]
+				}
+				
+		  ]
+			
+		},
+		{
+			"columns":[
+				{
+				
+					"struct1":[
+						{
+							"text":"Detailed Cost Inputs",
+							"copy":"true",
+							"tastText":"Due",
+							"taskDate":"20170403",
+							"success":"false",
+							"errors":"true",
+							"schedule": "false"
+						},
+						{
+							"text":"Complete Cost Inputs",
+							"copy":"true",
+							"tastText":"Due",
+							"taskDate":"20170403",
+							"success":"false",
+							"errors":"false",
+							"schedule": "true"
+						}
+					 ]
+				},
+				{
+				
+					"struct1":[
+						
+					 ]
+				}
+			]
+		}
+	]
+ }

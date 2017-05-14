@@ -1,0 +1,87 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<HBox class="G_Section qt-toolbar">
+		<f:SimpleForm minWidth="1024" maxContainerCols="1"
+			editable="false" layout="ResponsiveGridLayout" labelSpanL="3"
+			labelSpanM="3" labelSpanS="3" emptySpanL="0" emptySpanM="0"
+			emptySpanS="1" columnsL="2" columnsM="2" class="editableForm rm-bd">
+				<Label text="Notify" design="Bold" width="auto" /> 
+				<ActionSelect class="sapUiSmallMarginBottom"
+						items="{ProductModel>/ProductCollection}">
+						<items>
+							<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+						</items>
+					</ActionSelect>
+
+				<Label text="Message Template" design="Bold" width="auto" />
+				<ActionSelect class="sapUiSmallMarginBottom"
+						items="{ProductModel>/ProductCollection}">
+						<items>
+							<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+						</items>
+					</ActionSelect>
+
+		</f:SimpleForm>
+	</HBox>
+	<l:Grid defaultSpan="L12 M12 S12" width="auto" vSpacing="0"
+		hSpacing="0" class="G_Form_Column G_Form">
+
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2"
+				editable="false" layout="ResponsiveGridLayout" labelSpanL="3"
+				labelSpanM="3" labelSpanS="3" emptySpanL="0" emptySpanM="0"
+				emptySpanS="1" columnsL="4" columnsM="4" class="editableForm">
+
+
+				<table:Table id="idAdvTable" growing="true"
+					growingThreshold="5" rows="{ProductModel>/ProductCollection}">
+
+					<table:columns>
+						<table:Column width="5em">
+							<Label text="" />
+							<table:template>
+								<Button icon="sap-icon://delete" press="removeSuccessorLineItem" />
+							</table:template>
+						</table:Column>
+						<table:Column minScreenWidth="Tablet" demandPopin="true"
+							hAlign="Center" width="8rem" filterProperty="ItemId"
+							sortProperty="ItemId" filterOperator="EQ">
+							<Label text="Parellel Tasks" />
+							<table:template>
+								<ObjectIdentifier text="{ProductModel>ItemId}" />
+							</table:template>
+						</table:Column>
+						<table:Column width="12em">
+							<Label text="Response Text" />
+							<table:template>
+								<ObjectIdentifier title="{ProductModel>Name}"
+									text="{ProductModel>ProductId}" />
+							</table:template>
+						</table:Column>
+						<table:Column minScreenWidth="Tablet" demandPopin="true"
+							hAlign="Right">
+							<Label text="Rules" />
+							<table:template>
+								<ObjectIdentifier title="{ProductModel>Name}"
+									text="{ProductModel>ProductId}" />
+							</table:template>
+						</table:Column>
+						<table:Column minScreenWidth="Tablet" demandPopin="true"
+							hAlign="Center">
+							<Label text="Prefered" />
+							<table:template>
+								<ObjectIdentifier title="{ProductModel>Name}"
+									text="{ProductModel>ProductId}" />
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

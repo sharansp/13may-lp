@@ -1,0 +1,95 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	<l:Grid defaultSpan="L12 M12 S12" width="auto" vSpacing="0" hSpacing="0" class="G_Form_Column G_Form">
+		<l:content>
+			<table:Table id="idBidTable" growing="true" mode="SingleSelect" growingThreshold="5" rows="{ProductModel>/ProductCollection}">
+				<table:extension>
+					<Toolbar>
+						<Button   class="gkcb" text="" tooltip="Enter / Edit Cost" press="addItem" />
+						<Button class="gkcb" tooltip="Enter Billing Milestones" text="Import To XLS" press="Enter Billing Milestones" />
+						<Button press="includeBom" tooltip="Save" text="Save" />
+						<Button press="downloadCSVFile" tooltip="Continue" text="Continue" />
+					</Toolbar>
+				</table:extension>
+				<table:columns>
+					<table:Column width="5em">
+						<Label text="" />
+						<table:template>
+							<Button icon="sap-icon://decline" />
+						</table:template>
+					</table:Column>
+					<table:Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center" width="8rem" filterProperty="ItemId" sortProperty="ItemId"
+						filterOperator="EQ"
+					>
+						<Label text="ITEM" />
+						<table:template>
+							<ObjectIdentifier text="{ProductModel>ItemId}" />
+						</table:template>
+					</table:Column>
+					<table:Column width="12em">
+						<Label text="PROD/SERVICE" />
+						<table:template>
+							<ObjectIdentifier title="{ProductModel>Name}" text="{ProductModel>ProductId}" />
+						</table:template>
+					</table:Column>
+					<table:Column minScreenWidth="Tablet" demandPopin="true" width="3rem"  hAlign="Center" sortProperty="Quantity">
+						<Label text="QTY" />
+						<table:template>
+							<ObjectNumber number="{ProductModel>Quantity}" unit="{UoM}" />
+						</table:template>
+					</table:Column>
+					<table:Column minScreenWidth="Tablet" width="7rem" demandPopin="true" hAlign="Center" sortProperty="UnitPrice">
+						<Label text="VALUE BASED PRICE" />
+						<table:template>
+								<u:Currency value="{ProductModel>UnitPrice}" currency="{ProductModel>CurrencyCode}" textAlign="right" />
+								
+							<!-- -->
+						</table:template>
+					</table:Column>
+					<table:Column hAlign="Center" width="8rem" sortProperty="Price">
+						<Label text="COMPETITIVE PRICE" />
+						<table:template>
+							<u:Currency value="{ProductModel>Price}" currency="{ProductModel>CurrencyCode}" textAlign="right" />
+							<!-- <ObjectNumber number="{ parts:[{path:'ProductModel>Price'},{path:'ProductModel>CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: 
+								{showMeasure: false} }" unit="{ProductModel>CurrencyCode}" /> -->
+						</table:template>
+					</table:Column>
+					<table:Column hAlign="Center">
+						<Label text="QUOTE UNIT PRICE" />
+						<table:template>
+							<ObjectIdentifier text="{ProductModel>Price}" />
+						</table:template>
+					</table:Column>
+					<table:Column hAlign="Center">
+						<Label text="COST" />
+						<table:template>
+							<ObjectIdentifier text="{ProductModel>Price}" />
+						</table:template>
+					</table:Column>
+					<table:Column hAlign="Center">
+						<Label text="MARGIN" />
+						<table:template>
+							<Text text="{ProductModel>Height} %"  />
+						</table:template>
+					</table:Column>
+					<table:Column hAlign="Right">
+						<Label text="REMARKS" />
+						<table:template>
+							<ObjectIdentifier  text="{ProductModel>Status}"  />
+						</table:template>
+					</table:Column>
+						<table:Column hAlign="Right">
+						<Label text="" />
+						<table:template>
+								<Button icon="sap-icon://edit" width="25%" press="editBidItem" />
+						</table:template>
+					</table:Column>
+				
+					
+				</table:columns>
+			</table:Table>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

@@ -1,0 +1,112 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	<Dialog contentWidth="75%" showHeader="true" title="{DialogModel>/title}">
+		<l:VerticalLayout width="100%">
+			<l:BlockLayout>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell width="100%">
+						<Label text="Note: ROM cost is for bid/nobid decision. Detailed cost estimates can be generated bottomup using the workbench" />
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell width="50%">
+						<HBox>
+							<Label text="Product or Service" class="alignCenter" />
+							<Input value="{ItemModel>/Name}" width="12rem" type="text" class="inputBig" />
+						</HBox>
+					</l:BlockLayoutCell>
+					<l:BlockLayoutCell width="50%">
+						<HBox>
+							<Label text="Quantity Delivered" class="alignCenter" />
+							<Input value="{ItemModel>/Quantity}" descritpion="units" type="text" fieldWidth="50%" class="inputBig" />
+						</HBox>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell width="100%">
+						<HBox>
+							<Label text="Costing Basis" class="alignCenter" />
+							<RadioButtonGroup columns="5" selectedIndex="2" class="sapUiMediumMarginBottom">
+								<buttons>
+									<RadioButton text="Material" />
+									<RadioButton text="Labour" />
+									<RadioButton text="Travel" />
+									<RadioButton text="Overhead" />
+									<RadioButton text="Other" />
+								</buttons>
+							</RadioButtonGroup>
+						</HBox>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+					<l:BlockLayoutCell width="100%">
+						<table:TreeTable id="TreeTableBasic" rows="{WbsModel>/root/children}" selectionMode="Single" enableSelectAll="false"
+							ariaLabelledBy="title"
+						>
+							<!-- <table:toolbar> <Toolbar> <core:Icon icon="sap-icon://exit-full-screen" press="showSmallScreen" /> <Button text="New" icon="sap-icon://sys-add" 
+								id="costNewbtn" press="addItem" /> </Toolbar> </table:toolbar> -->
+							<table:toolbar>
+								<Toolbar>
+									<core:Icon src="sap-icon://exit-full-screen" press="showSmallScreen" />
+								</Toolbar>
+							</table:toolbar>
+							<table:columns>
+								<table:Column width="20rem">
+									<Label text="WBS or Task" />
+									<table:template>
+										<Text text="{WbsModel>description}" />
+									</table:template>
+								</table:Column>
+								<table:Column width="13rem">
+									<Label text="Product / Service" />
+									<table:template>
+										<Text text="{WbsModel>text}" />
+									</table:template>
+								</table:Column>
+								<table:Column width="9rem">
+									<Label text="Qty" />
+									<table:template>
+										<u:Currency value="{WbsModel>amount}" />
+									</table:template>
+								</table:Column>
+								<table:Column width="9rem">
+									<Label text="Price" />
+									<table:template>
+										<Text text="{WbsModel>costTarget}" />
+										<!-- <u:Currency value="{WbsModel>costTarget}" currency="{WbsModel>currency}" /> -->
+									</table:template>
+								</table:Column>
+								<table:Column width="9rem">
+									<Label text="Factor" />
+									<table:template>
+										<Text text="" />
+										<!-- <u:Currency value="{$= {WbsModel>costTarget} ? {WbsModel>cost} / 10 : 0}" currency="{WbsModel>currency}" /> -->
+									</table:template>
+								</table:Column>
+								<table:Column width="9rem">
+									<Label text="Total" />
+									<table:template>
+										<!-- <u:Currency value="{WbsModel>cost}" /> -->
+										<Text text="{WbsModel>costTarget}" />
+									</table:template>
+								</table:Column>
+								<table:Column width="5rem">
+									<Label text="" />
+									<table:template>
+										<Button icon="sap-icon://notification-2" width="25%" press="comments" />
+									</table:template>
+								</table:Column>
+							</table:columns>
+						</table:TreeTable>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+			</l:BlockLayout>
+		</l:VerticalLayout>
+		<buttons>
+			<Button text="Cancel" press="closeCostEstimategDlg" />
+			<Button text="Confirm" press="confrimCostEstimate" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

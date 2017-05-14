@@ -1,0 +1,45 @@
+.sapUiRespGridMedia-Std-Phone.sapUiRespGridHSpace0>.sapUiRespGridSpanS8 {
+    width: 60.66666667%;
+}
+
+.poc-subsection .sapUiFormResGridCont>.sapUiFormElementLbl>.sapMLabel {
+	margin-top: 20px !important;
+}
+
+
+.alignCenter {
+	margin-top: 20px !important;
+	margin-right: 0.5rem !important;
+}
+.inputBig{
+    width: 26rem !important;
+    /*margin: 0.5rem !important;*/
+}
+
+.hide
+{
+	display: none !important;
+}
+
+.paddingRight{
+	padding-right: 9rem !important;	
+	border: none !important;	
+}
+.paddingSmall{
+	padding: 1rem 0.2rem 0.3rem 0.2rem !important;
+	width: 12rem !important;
+	text-align: center !important;	
+}
+
+
+.rcorners2 {
+    border-radius: 1rem;
+    border: 1px solid #c0c0c0;
+    padding: 1rem; 
+   /*  width: 200px;
+    height: 150px;  */
+},
+
+.hideNoData .sapMLIB .sapMListNoData .sapMLIBTypeInactive .sapMLIBFocusable{
+	display: none !important;
+}

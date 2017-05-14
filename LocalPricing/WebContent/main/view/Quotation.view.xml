@@ -1,0 +1,51 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName="sap.ui.my.main.controller.Quotation"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	<Page title="Quotation" showNavButton="true" class="sapUiContentPadding" navButtonPress="back" enableScrolling="true">
+		<headerContent>
+			<Button icon="sap-icon://action" tooltip="Home" press="goToHome" />
+		</headerContent>
+		<IconTabBar expanded="true" id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter design="Horizontal" text="Setup &amp; Requirements" key="setup">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Requirement" type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				<IconTabFilter design="Horizontal" text="Structure: CLINS/Items" key="items">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Items" type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				<IconTabFilter design="Horizontal" text="Price to win Bid/No-Bid" key="bid">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.Bid" type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				<IconTabFilter design="Horizontal" text="Response Plan" key="plan">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.ResponsePlan" type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				<IconTabFilter design="Horizontal" text="Basis of Esitimate" key="estimate">
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.BasicOfEstimate" type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				<IconTabFilter design="Horizontal" text="Cost Esimates &amp; Models" key="cost" >
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.CostTreeFullScreen"  type="XML" />
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				<IconTabFilter design="Horizontal" text="Pricing &amp; Risks" key="pricing" />
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+				<IconTabFilter design="Horizontal" text="Review &amp; Finalize" key="review" />
+				<IconTabSeparator icon="sap-icon://open-command-field" />
+			</items>
+		</IconTabBar>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="Upload Requirements" id="btnUpldreqDoc" press="pressUploadReq" />
+					<Button text="Upload RFP Docs" id="btnUpldrfpDoc" press="pressUploadRFC" />
+					<Button text="Cancel" id="btnQtCancel" press="pressQtCancel" />
+					<Button text="Save" id="btnQtSave" press="saveQuote" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,124 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<l:Grid defaultSpan="L12 M12 S12" width="auto" vSpacing="0"
+		hSpacing="0" class="G_Form_Column G_Form">
+
+		<l:content>
+			<table:Table id="idProductsTable" growing="true" selectionMode="Single" visibleRowCount="5"
+				growingThreshold="5" rows="{ItemsModel>/}">
+				<table:extension>
+				<!-- 	<Toolbar>
+				          <Button icon="sap-icon://sys-add"
+				                      custom:PopUpType="Product"
+				                      class="gkcb"
+				                      text=""
+				                      tooltip="Add a new Item"
+				                      press="addItem" /> 
+				              <ToolbarSpacer/> 
+				            <Button icon="sap-icon://sys-add"
+			                      class="gkcb"
+			                      tooltip="Add step"
+			                      text="Add step"
+			                      press="exportData"  />
+			                            
+			             
+			             
+				        </Toolbar> -->
+				        <Toolbar>
+				          <Button icon="sap-icon://sys-add"
+				                      custom:PopUpType="Product"
+				                      class="gkcb"
+				                      text=""
+				                      tooltip="Add a new Item"
+				                      press="addItem" /> 
+				              <ToolbarSpacer/> 
+				            <Button icon="sap-icon://download"
+			                      class="gkcb"
+			                      tooltip="Import To XLS"
+			                      text="Import To XLS"
+			                      press="exportData"  />
+			              <Button  press="includeBom" tooltip="Include BOM" text="Include BOM" />                
+			             <Button  press="importItems" tooltip="Include Items" text="Include Items" /> 
+			              <Button  press="importWBS" tooltip="Include WBS"  text="Include WBS"/>
+				        </Toolbar>
+				</table:extension>
+				<table:columns>
+					<table:Column width="5em">
+						<Label text="" />
+						<table:template>
+							<core:Icon src="sap-icon://decline" />
+						</table:template>
+					</table:Column>
+					<table:Column minScreenWidth="Tablet" demandPopin="true" 
+						hAlign="Center" width="8rem" filterProperty="seq" sortProperty="seq"
+						filterOperator="EQ">
+						<Label text="ITEM" />
+						<table:template>
+							<ObjectIdentifier text="{ItemsModel>seq}" />
+						</table:template>
+					</table:Column>
+					<table:Column width="12em" sortProperty="Product"  filterProperty="Product">
+						<Label text="PROD/SERVICE" />
+						<table:template>
+							<ObjectIdentifier title="{ItemsModel>text}"
+								text="{ItemsModel>Product}" />
+						</table:template>
+					</table:Column>
+					<table:Column minScreenWidth="Tablet" demandPopin="true"
+						hAlign="Center"  sortProperty="qty" filterProperty="qty" >
+						<Label text="QTY" />
+						<table:template>
+							<ObjectNumber
+								number="{ItemsModel>qty}"
+								unit="{ItemsModel>uom}" />
+						</table:template>
+					</table:Column>
+					<table:Column minScreenWidth="Tablet" demandPopin="true"
+						hAlign="Center"  sortProperty="unitPrice" filterProperty="unitPrice">
+						<Label text="UNIT PRICE" />
+						<table:template>
+								<HBox>
+									<ObjectNumber width="5rem"
+								number="{ItemsModel>unitPrice}" />
+									<!--  <u:Currency  value="{ItemsModel>qty}" currency="{ProductModel>CurrencyCode}" textAlign="right"  /> -->
+									  <core:Icon src="sap-icon://edit" width="25%" press="editItem" />
+								</HBox>
+								
+
+							<!--  -->
+						</table:template>
+					</table:Column>
+					<table:Column hAlign="Center" sortProperty="extendedPrice" filterProperty="extendedPrice" >
+						<Label text="AMOUNT" />
+						<table:template>
+						<ObjectNumber
+								number="{ItemsModel>extendedPrice}" />
+						</table:template>
+					</table:Column>
+
+					<table:Column hAlign="Center">
+						<Label text="DELIVERY DATE" sortProperty="deliveryDue" filterProperty="deliveryDue"/>
+						<table:template>
+							<ObjectIdentifier text="{ItemsModel>deliveryDue}" />
+						</table:template>
+					</table:Column>
+
+					<table:Column hAlign="Right">
+						<Label text="REMARKS" />
+						<table:template>
+							<ObjectIdentifier text="{ItemsModel>status}" />
+						</table:template>
+					</table:Column>
+				</table:columns>
+
+			</table:Table>
+
+
+		</l:content>
+	</l:Grid>
+
+</core:FragmentDefinition>

@@ -1,0 +1,141 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+>
+	<l:VerticalLayout width="100%">
+		<l:BlockLayout>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="75%" class="poc-subsection">
+					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="1" columnsM="1" class="editableForm rm-bd"
+					>
+						<RadioButton text="Create from SalesForce Opportunity" />
+						<Select class="sapUiSmallMarginCenter" items="{OpportunityModel>/results}">
+							<items>
+								<core:Item key="{OpportunityModel>id}" text="{OpportunityModel>name}" />
+							</items>
+						</Select>
+					</f:SimpleForm>
+					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+						labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="1" columnsM="1" class="editableForm rm-bd"
+					>
+						<RadioButton text="Copy Prior Quotation" />
+						<Select class="sapUiSmallMarginBottom" items="{QuotesModel>/results}">
+							<items>
+								<core:Item key="{QuotesModel>id}" text="{QuotesModel>text}" />
+							</items>
+						</Select>
+					</f:SimpleForm>
+					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="1" columnsM="1" class="editableForm rm-bd"
+					>
+						<RadioButton text="Create New Quotation" />
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell width="25%" class="poc-subsection">
+					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="2" columnsM="2" class="editableForm rm-bd"
+					>
+						<Button text="Create Quotation" />
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</l:VerticalLayout>
+	<l:VerticalLayout width="100%">
+		<l:BlockLayout>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="50%" class="poc-subsection">
+					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="1" columnsM="1" class="editableForm rm-bd"
+					>
+						<Label text="Customer" design="Bold" width="auto" class="alignCenter" />
+						<Select selectedKey="{QuoteModel>/customerID}" items="{CustomersModel>/results}">
+							<items>
+								<core:Item key="{CustomersModel>id}" text="{CustomersModel>text}" />
+							</items>
+						</Select>
+						<Label text="Sales Dept" design="Bold" width="auto" class="alignCenter" />
+						<Select class="sapUiSmallMarginBottom" selectedKey="{QuoteModel>/department}" items="{SalesDeptModel>/results}">
+							<items>
+								<core:Item key="{SalesDeptModel>id}" text="{SalesDeptModel>text}" />
+							</items>
+						</Select>
+						<Label text="Quotation Type" design="Bold" width="auto" class="alignCenter" />
+						<Select class="sapUiSmallMarginBottom" items="{QuoteTypeModel>/results}" selectedKey="{QuoteModel>/type}">
+							<items>
+								<core:Item key="{QuoteTypeModel>id}" text="{QuoteTypeModel>name}" />
+							</items>
+						</Select>
+						<Label text="Response Cost Object" design="Bold" width="auto" class="alignCenter" />
+						<Select class="sapUiSmallMarginBottom" selectedKey="{QuoteModel>/responseWbs}" items="{CostModel>/results}">
+							<items>
+								<core:Item key="{CostModel>id}" text="{CostModel>name}" />
+							</items>
+						</Select>
+						<Label text="Started" design="Bold" width="auto" class="alignCenter" />
+						<DatePicker value="{QuoteModel>/programStart}" valueFormat="YYYYMMdd" displayFormat="YYYY-MM-dd" change="handleChange" class="sapUiSmallMarginBottom" />
+						<Label text="Target Margin" design="Bold" width="auto" class="alignCenter" />
+						<Input value="{QuoteModel>/targetMargin}" type="Text" placeholder="Margin" />
+						<Label text="Pricing Strategy" design="Bold" width="auto" class="alignCenter" />
+						<RadioButtonGroup columns="3" width="500px" class="sapUiMediumMarginBottom">
+							<buttons>
+								<RadioButton id="rbCost" text="Cost Driven" />
+								<RadioButton id="rbMarket" text="Market Driven" />
+							</buttons>
+						</RadioButtonGroup>
+						<Label text="Potential Value" design="Bold" width="auto" class="alignCenter" />
+						<Input value="{QuoteModel>/valuePricingWeight}" type="Text" placeholder="USD" />
+						<Label text="Factored Value" design="Bold" width="auto" class="alignCenter" />
+						<Input value="{QuoteModel>/factoredValue}" type="Text" placeholder="USD" />
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell width="50%" class="poc-subsection">
+					<f:SimpleForm layout="ResponsiveGridLayout" minWidth="1024" maxContainserCols="1" editable="false" columnsM="2" columnsL="2"
+						labelSpanM="3" labelSpanL="3" labelSpanS="3" class="editableForm"
+					>
+						<f:content>
+							<Label text="Commercial Contract" design="Bold" width="auto" class="alignCenter" />
+							<Select class="sapUiSmallMarginBottom" selectedKey="{QuoteModel>/contactID}" items="{ContactsModel>/results}">
+								<items>
+									<core:Item key="{ContactsModel>id}" text="{ContactsModel>name}" />
+								</items>
+							</Select>
+							<Label text="Quotation Owner" design="Bold" width="auto" class="alignCenter" required="true" />
+							<Select class="sapUiSmallMarginBottom" selectedKey="{QuoteModel>/owner}" items="{DBUserModel>/results}">
+								<items>
+									<core:Item key="{DBUserModel>id}" text="{DBUserModel>name}" />
+								</items>
+							</Select>
+							<Label text="Quotation Number" design="Bold" width="auto" class="alignCenter" />
+							<Input id="qtNo" value="{QuoteModel>/docnr}" type="Text" placeholder="- Internal -" />
+							<Label text="Cost Incurred to Date" design="Bold" width="auto" class="alignCenter" />
+							<Input id="costIncurred" value="{QuoteModel>/buValue}" type="Text" placeholder="$0.00" />
+							<Label text="Due Date" design="Bold" width="auto" class="alignCenter" />
+							<DatePicker id="dueDate" value="{QuoteModel>/programEnd}" valueFormat="YYYYMMdd" displayFormat="YYYY-MM-dd" change="handleChange"
+								class="sapUiSmallMarginBottom" />
+							<Label text="Strategic Investment" design="Bold" width="auto" class="alignCenter" />
+							<Input value="{QuoteModel>/pricingStrategy}" type="Text" placeholder="$0" />
+							<Label text="" design="Bold" width="auto" class="alignCenter" />
+							<RadioButtonGroup columns="3" width="500px" class="sapUiMediumMarginBottom">
+								<buttons>
+									<RadioButton id="rbCompBased" text="Competitor Based" />
+									<RadioButton id="rbValBased" text="Value Based" />
+								</buttons>
+							</RadioButtonGroup>
+							<Label text="" design="Bold" width="auto" class="alignCenter" />
+							<RangeSlider range="0,100" min="0" max="500" showHandleTooltip="false" inputsAsTooltips="true" class="sapUiSmallMarginBottom" />
+							<Label text="Current Status" design="Bold" width="auto" class="alignCenter" />
+							<Select class="sapUiSmallMarginBottom" value="{QuoteModel>/status}" items="{StatusModel>/results}">
+								<items>
+									<core:Item key="{StatusModel>id}" text="{StatusModel>text}" />
+								</items>
+							</Select>
+							<Label text="Profitability of Closure" design="Bold" width="auto" class="alignCenter" />
+							<Input value="{QuoteModel>/probability}" type="Text" placeholder="%" />
+						</f:content>
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

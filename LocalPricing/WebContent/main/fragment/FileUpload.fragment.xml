@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:commons="sap.ui.commons"
+  xmlns:unified="sap.ui.unified"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+  <Dialog
+    title="File Upload">
+    <Label text="Upload an Excel spreadsheet with requirements from this RFP, with columns for: code, title, description, response and
+owner."   />
+	<Link text="click here" />
+	<Label text="to download a sample template. If you already uploaded requirements and need to edit them then download
+them first and then upload after editing them in Excel." />
+    <unified:FileUploader id="csvFileUpload" change="handleProcessFile" />
+    <buttons>
+          <Button text="close" press="handleClose" />
+    </buttons>
+  </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto" vSpacing="0"
+		hSpacing="0" class="G_Form_Column G_Form">
+
+		<l:content>
+			<f:SimpleForm minWidth="1024" maxContainerCols="2"
+				editable="false" layout="ResponsiveGridLayout" labelSpanL="3"
+				labelSpanM="3" labelSpanS="3" emptySpanL="0" emptySpanM="0"
+				emptySpanS="1" columnsL="4" columnsM="4" class="editableForm">
+
+				<Label text="Step Id" />
+				<Input value="" type="text" />
+				<Label text="Sequence" />
+				<Input value="" type="text" />
+				<Label text="Phase1" />
+				<Input value="" type="text" />
+				<Label text="Phase1" />
+				<Input value="" type="text" />
+				<Label text="Phase1" />
+				<Input value="" type="text" />
+
+				<Label text="Step Id" />
+				<Input value="" type="text" />
+				<Label text="Sequence" />
+				<Input value="" type="text" />
+				<Label text="Phase1" />
+				<Input value="" type="text" />
+				<Label text="Phase1" />
+				<Input value="" type="text" />
+				<Label text="Phase1" />
+				<Input value="" type="text" />
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

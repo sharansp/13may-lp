@@ -1,0 +1,50 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:commons="sap.ui.commons"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form" >
+  
+	<Dialog showHeader="true" id="pricingDlg" title="{DialogModel>/title}" contentWidth="75%" >
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="" labelSpanL="4" labelSpanM="4"
+					emptySpanL="0" emptySpanM="0" columnsL="2" columnsM="2" class="editableForm"
+				>
+					<f:content>
+						<core:Title text="" />
+						<Label text="Product or Service" />
+						<Select class="sapUiSmallMarginBottom" items="{ProductModel>/ProductCollection}" selectedKey="{ItemModel>/ProductId}">
+							<items>
+								<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+							</items>
+						</Select>
+						<Label text="Tax &amp; Discount" />
+						<HBox>
+							<Input value="{ItemModel>/SALES_TAX}" description="/Unit" type="text" fieldWidth="50%" />
+							<Input value="5% Discount" type="text" />
+						</HBox>
+						<Label text="" />
+						<CheckBox text="Lease or Subsription" selected="true" />
+						
+						<core:Title text="" />
+						<Label text="Unit Price" />
+						<Input value="{ItemModel>/Quantity}" type="text" />
+						
+						<Label text="Delivery Date" />
+						<DatePicker  value="{ItemModel>/DELIVERY_DATE}" displayFormat="MMM dd, YYYY" valueFormat="YYYY-MM-dd" change="handleChange"
+							class="sapUiSmallMarginBottom" />
+						
+						<Label text="Pricing Remarks" />
+						<Input value="{ItemModel>/Status}" type="text" />
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+			
+			
+			<buttons>
+				<Button text="Cancel" press="closePricingDlg" />
+				<Button text="Confirm" press="confrimPricing" />
+			</buttons>
+		
+	</Dialog>
+</core:FragmentDefinition>

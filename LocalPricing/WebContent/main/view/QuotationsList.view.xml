@@ -1,0 +1,17 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName="sap.ui.my.main.controller.QuotationsList"
+	xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	<Page title="Quotations" showNavButton="true" class="sapUiContentPadding" navButtonPress="back" enableScrolling="true">
+		<headerContent>
+			<Button icon="sap-icon://action" tooltip="Home" press="goToHome" />
+		</headerContent>
+		<!-- <IconTabBar expanded="true" id="idIconTabBarList" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter design="Horizontal" text="Quotes" key="setup"> -->
+					<core:Fragment fragmentName="sap.ui.my.main.fragment.QuotesList" type="XML" />
+				<!-- </IconTabFilter>
+			</items>
+		</IconTabBar> -->
+	</Page>
+</core:View>

@@ -1,0 +1,14 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName="sap.ui.my.main.controller.Quotation"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page title="Quotation" showNavButton="true" class="sapUiContentPadding"
+		navButtonPress="back" enableScrolling="true">
+		<headerContent>
+			<Button icon="sap-icon://action" tooltip="Home" press="goToHome" />
+		</headerContent>
+		
+		
+		
+	</Page>
+</core:View>

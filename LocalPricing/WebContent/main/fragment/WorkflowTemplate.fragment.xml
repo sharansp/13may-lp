@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	
+		<VBox width="100%"   >
+			<VBox >
+				<Select class="sapUiSmallMarginBottom"
+					items="{ProductModel>/ProductCollection}">
+					<items>
+						<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+					</items>
+				</Select>
+				<Link text="{ProductModel>link}" press="" />
+			</VBox>
+		</VBox>
+		<VBox width="100%" class="rcorners2"  >
+			<HBox >
+				<core:Icon src="sap-icon://copy" class="paddingRight" color="#031E48" press="" />
+				<core:Icon src="sap-icon://edit"  press="" ariaLabelledBy="actionButtonLabel" />
+			</HBox>
+			<Text text="Create Skeleton Structure" class="paddingSmall" textAlign="Center" />
+			<HBox>
+				<Text text="Completed: 3/18/17"  class="alignCenter" width="10rem"  />
+				<core:Icon src="sap-icon://sys-enter-2" class="alignCenter"  visible="false"  press="" />	
+				<core:Icon src="sap-icon://fob-watch" class="alignCenter"  press=""  />
+				<core:Icon src="sap-icon://alert" class="alignCenter"  press=""  visible="false" />
+			</HBox>
+		</VBox>
+		
+		<VBox width="100%"  >
+			<Link text="Click" press="" />
+			<Link text="Click" press="" />
+		</VBox>
+		
+		
+</core:FragmentDefinition>

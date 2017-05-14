@@ -1,0 +1,130 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns:ux="sap.uxap"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	<l:VerticalLayout width="100%">
+		<l:BlockLayout>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="100%" class="poc-subsection">
+					<Label text="" design="Bold" width="auto" />
+					<RadioButtonGroup columns="2" selectedIndex="2" class="sapUiMediumMarginTop">
+						<buttons>
+							<RadioButton id="RB2-1" text="Template" />
+							<RadioButton id="RB2-2" text="Actual WorkFlow" editable="false" />
+						</buttons>
+					</RadioButtonGroup>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="50%" class="poc-subsection">
+					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="2" columnsM="2" class="editableForm rm-bd"
+					>
+						<Label text="Current Status" design="Bold" width="auto" />
+						<ActionSelect class="sapUiSmallMarginBottom" items="{ProductModel>/ProductCollection}">
+							<items>
+								<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+							</items>
+						</ActionSelect>
+						<Label text="WorkFlow Owners" design="Bold" width="auto" />
+						<ActionSelect class="sapUiSmallMarginBottom" items="{ProductModel>/ProductCollection}">
+							<items>
+								<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+							</items>
+						</ActionSelect>
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell width="50%" class="poc-subsection">
+					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="2" columnsM="2" class="editableForm rm-bd"
+					>
+						<Label text="Workflow Template" design="Bold" width="auto" />
+						<ActionSelect class="sapUiSmallMarginBottom" items="{ProductModel>/ProductCollection}">
+							<items>
+								<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+							</items>
+						</ActionSelect>
+						<Label text="Time In Current State" design="Bold" width="auto" />
+						<ActionSelect class="sapUiSmallMarginBottom" items="{ProductModel>/ProductCollection}">
+							<items>
+								<core:Item key="{ProductModel>ProductId}" text="{ProductModel>Name}" />
+							</items>
+						</ActionSelect>
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</l:VerticalLayout>
+	<l:VerticalLayout width="100%">
+		<l:BlockLayout>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="100%" class="poc-subsection">
+					
+			<!-- 				 	<Toolbar>
+							<core:Icon src="sap-icon://sys-add" color="#031E48" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+								</core:Icon>
+								<Button icon="sap-icon://add-product" custom:PopUpType="Product" class="gkcb" text="" tooltip="Add a new Item" press="addItem" />
+								<ToolbarSpacer />
+								<core:Icon src="sap-icon://sys-add" 	color="#E69A17" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+								</core:Icon>
+							</Toolbar> 
+							<List
+								items="{ProductModel>/ProductCollection}"
+								growing="true"
+								growingThreshold="10"
+								growingScrollToLoad="false" visible="true">
+								<CustomListItem>
+									<HBox>
+										<Text text="{path:'ProductModel>id',formatter:'.getPhase'}"  class="alignCenter" width="10rem"  />
+										<List items="{ProductModel>Filters}"  class="hideNoData"
+											visible="{= Boolean(${path:'ProductModel>Filters/0'})}" >
+												<CustomListItem>
+														
+												</CustomListItem>
+										</List>
+										<List items="{ProductModel>steps}" visible="{= Boolean(${path:'ProductModel>steps/0'})}" noDataText=" " >
+											<CustomListItem>
+												<VBox width="100%" >
+													
+												</VBox>
+										</CustomListItem>
+										</List>
+									</HBox>
+								</CustomListItem>
+							</List> -->
+							
+								<!-- <Table id="resPlanTbl"	>
+								<headerToolbar>
+									<Toolbar>
+										<core:Icon src="sap-icon://sys-add" color="#031E48" >
+												<core:layoutData>
+													<FlexItemData growFactor="1" />
+												</core:layoutData>
+										</core:Icon>
+										<ToolbarSpacer/>
+										<core:Icon src="sap-icon://sys-add" 	color="#E69A17" >
+												<core:layoutData>
+													<FlexItemData growFactor="1" />
+												</core:layoutData>
+										</core:Icon>
+									</Toolbar>
+								</headerToolbar>
+								<items>
+								</items>
+								</Table> -->
+								 <l:Grid defaultSpan="L12 M12 S12" id="resGrid" width="auto" vSpacing="0" hSpacing="0" class="G_Form">
+								 </l:Grid>
+						
+								
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</l:VerticalLayout>
+</core:FragmentDefinition>
