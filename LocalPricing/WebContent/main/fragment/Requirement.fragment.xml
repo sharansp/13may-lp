@@ -28,7 +28,14 @@
 					<f:SimpleForm minWidth="1024" maxContainerCols="1" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
 						labelSpanS="3" emptySpanL="0" emptySpanM="0" emptySpanS="1" columnsL="1" columnsM="1" class="editableForm rm-bd"
 					>
-						<RadioButton text="Create New Quotation" />
+						<RadioButton text="Create New Quotation" select="onSelectRB_NewQuote"/>
+
+						<!-- <Label text="Add Description"/> -->
+						<Input
+						visible="false"
+						id="idAddDescriptionInput"
+						type="Text"
+						placeholder="Add Description ..." />
 					</f:SimpleForm>
 				</l:BlockLayoutCell>
 				<l:BlockLayoutCell width="25%" class="poc-subsection">

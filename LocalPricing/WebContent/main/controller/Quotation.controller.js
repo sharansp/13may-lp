@@ -15,6 +15,7 @@ sap.ui.define([
          callBack : null,
          
 		onInit: function (inData) {
+			debugger;
 			//sap.ui.core.BusyIndicator.show(0);
 			var url = "/pricing/pricingApp/services/quote.xsodata";
 			
@@ -541,6 +542,17 @@ sap.ui.define([
 		},
 		getRouter : function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);	
+		},
+		editUitPrice: function (evt) {
+			debugger;
+		},
+		/**
+			*on selecting radio button Create Quote: Set Add Description Input visible 
+			*Binding: yet to be done
+		**/
+		onSelectRB_NewQuote: function (evt) {
+			var oInput = this.oView.byId("idAddDescriptionInput");
+			oInput.setVisible(true);
 		},
 
 	});

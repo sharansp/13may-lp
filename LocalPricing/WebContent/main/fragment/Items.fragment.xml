@@ -85,7 +85,7 @@
 									<ObjectNumber width="5rem"
 								number="{ItemsModel>unitPrice}" />
 									<!--  <u:Currency  value="{ItemsModel>qty}" currency="{ProductModel>CurrencyCode}" textAlign="right"  /> -->
-									  <core:Icon src="sap-icon://edit" width="25%" press="editItem" />
+									  <core:Icon src="sap-icon://edit" width="25%" press="editUitPrice" />
 								</HBox>
 								
 
