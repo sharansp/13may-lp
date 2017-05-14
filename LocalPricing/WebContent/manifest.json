@@ -1,0 +1,74 @@
+{  
+   "_version":"0.0.1",
+   "sap.app":{  
+      "name":"sap.ui.my",
+      "version":"0.0.1",
+      "description":"Sample application to understand component.js/json",
+      "dependencies":{  
+
+      }
+   },
+   "sap.ui5":{  
+      "_version":"1.1.0",
+      "rootView":"sap.ui.my.main.view.App",
+      "dependencies":{  
+         "minUI5Version":"1.30",
+         "libs":{  
+            "sap.m":{  
+
+            }
+         }
+      },
+      "resources":{  
+
+      },
+         "routing" : {
+            "config" : {
+               "routerClass" : "sap.m.routing.Router", 
+               "viewType" : "XML", 
+               "viewPath" : "sap.ui.my.main.view", 
+               "controlId" : "app", 
+               "controlAggregation" : "pages", 
+               "transition" : "slide" 
+            },
+
+            "routes" : [ { 
+               "pattern" : "", 
+               "name" : "dashboard", 
+               "target" : "dashboard" 
+            }, 
+            {
+               "pattern" : "quotation",
+               "name" : "quotation",
+               "target" : "quotation"
+            },
+            {
+               "pattern" : "quotations",
+               "name" : "quotations",
+               "target" : "quotations"
+            },
+            {
+               "pattern" : "quotation/{id}",
+               "name" : "quotation",
+               "target" : "quotation"
+            }],
+
+            "targets" : { 
+               "dashboard" : { 
+                  "viewName" : "Dashboard" 
+               },
+               "quotation" : {
+                  "viewName" : "Quotation"
+               },
+               "quotations": {
+                  "viewName" : "QuotationsList"
+               },
+               "notFound": {
+                  "viewName": "NotFound",
+                  "transition": "show"
+               }
+            }
+
+         }
+   }
+}
