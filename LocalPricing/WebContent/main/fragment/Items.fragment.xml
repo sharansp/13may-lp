@@ -44,6 +44,7 @@
 			              <Button  press="includeBom" tooltip="Include BOM" text="Include BOM" />                
 			             <Button  press="importItems" tooltip="Include Items" text="Include Items" /> 
 			              <Button  press="importWBS" tooltip="Include WBS"  text="Include WBS"/>
+			              <ToggleButton enabled="true" pressed="false" id="editButton" text="Edit"  press="onItemsTableEdit" tooltip="Edit Table Items" />
 				        </Toolbar>
 				</table:extension>
 				<table:columns>
@@ -58,7 +59,8 @@
 						filterOperator="EQ">
 						<Label text="ITEM" />
 						<table:template>
-							<ObjectIdentifier text="{ItemsModel>seq}" />
+							<!-- <ObjectIdentifier text="{ItemsModel>seq}" /> -->
+							<Input type="Number" editable="{ItemsModel>ItemsTableEditable}" value="{ItemsModel>seq}" />
 						</table:template>
 					</table:Column>
 					<table:Column width="12em" sortProperty="Product"  filterProperty="Product">
@@ -72,9 +74,10 @@
 						hAlign="Center"  sortProperty="qty" filterProperty="qty" >
 						<Label text="QTY" />
 						<table:template>
-							<ObjectNumber
+							<!-- <ObjectNumber
 								number="{ItemsModel>qty}"
-								unit="{ItemsModel>uom}" />
+								unit="{ItemsModel>uom}" /> -->
+								<Input type="Number" editable="{ItemsModel>ItemsTableEditable}" value="{ItemsModel>qty}" />
 						</table:template>
 					</table:Column>
 					<table:Column minScreenWidth="Tablet" demandPopin="true"
@@ -82,10 +85,11 @@
 						<Label text="UNIT PRICE" />
 						<table:template>
 								<HBox>
-									<ObjectNumber width="5rem"
-								number="{ItemsModel>unitPrice}" />
-									<!--  <u:Currency  value="{ItemsModel>qty}" currency="{ProductModel>CurrencyCode}" textAlign="right"  /> -->
-									  <core:Icon src="sap-icon://edit" width="25%" press="editUitPrice" />
+									<!-- <ObjectNumber width="5rem"
+								number="{ItemsModel>unitPrice}" /> -->
+									<!--  <u:Currency  value="{ItemsModel>qty}" currency="{ProductModel>CurrencyCode}" textAlign="right"  /> 
+									  <core:Icon src="sap-icon://edit" width="25%" press="editUitPrice" />-->
+									  <Input editable="{ItemsModel>ItemsTableEditable}" value="{ItemsModel>unitPrice}" />
 								</HBox>
 								
 

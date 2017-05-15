@@ -86,6 +86,9 @@ sap.ui.my.main.Helper.FileHelper = {
 		
 		updateTable: function(data){
 			var model  = this.parentContext.oView.getModel(this.modelName);
+			data.map(function(element) {
+			   return element.ItemsTableEditable=false;
+			});
 			model.setData(data);
 			model.refresh();
 			this.callBack(data);

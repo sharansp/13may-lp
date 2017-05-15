@@ -15,7 +15,6 @@ sap.ui.define([
          callBack : null,
          
 		onInit: function (inData) {
-			debugger;
 			//sap.ui.core.BusyIndicator.show(0);
 			var url = "/pricing/pricingApp/services/quote.xsodata";
 			
@@ -479,7 +478,6 @@ sap.ui.define([
 			resGrid.addContent(vMain);
 		},
 		importItems: function(evt){
-			debugger;
 			var fieldList = {
 					"quoteID" : "quoteID",
 					"seq":"seq",
@@ -517,8 +515,8 @@ sap.ui.define([
 			this.callBack = function(data){
 				// do the required in this call back after getting the response
 			};
-			debugger;
-			q = this.oView.byId("idProductsTable")
+			debugger
+			var oProdTable = this.oView.byId("idProductsTable")
 		    fileHelper.uploadFile(evt, this, fieldList,"ItemsModel", this.callBack);
 		},
 		closeCostEstimategDlg: function(evt){
@@ -562,6 +560,27 @@ sap.ui.define([
 				oInput.setVisible(false);
 		},
 
+		onItemsTableEdit: function (evt) {
+			var oModel = this.oView.getModel('ItemsModel');
+			var modelData = oModel.getData();
+			/*modelData.map(function(element) {
+			   return element.ItemsTableEditable=true;
+			});*/
+			if (evt.getSource().getPressed()) {
+				modelData.map(function(element) {
+			   		return element.ItemsTableEditable=true;
+				});
+				evt.getSource().setTooltip("Save Table Items");
+				evt.getSource().setText('Save');
+			} else {
+				modelData.map(function(element) {
+			   		return element.ItemsTableEditable=false;
+				});
+				evt.getSource().setTooltip("Edit Table Items");
+				evt.getSource().setText('Edit');
+			};
+			oModel.refresh();
+		},
 	});
  
  
