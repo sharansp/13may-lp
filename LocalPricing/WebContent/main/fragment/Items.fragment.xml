@@ -8,7 +8,7 @@
 		hSpacing="0" class="G_Form_Column G_Form">
 
 		<l:content>
-			<table:Table id="idProductsTable" growing="true" selectionMode="Single" visibleRowCount="5"
+			<table:Table id="idProductsTable" growing="true" selectionMode="MultiToggle" visibleRowCount="5"
 				growingThreshold="5" rows="{ItemsModel>/}">
 				<table:extension>
 				<!-- 	<Toolbar>
@@ -48,12 +48,12 @@
 				        </Toolbar>
 				</table:extension>
 				<table:columns>
-					<table:Column width="5em">
+					<!-- <table:Column width="5em">
 						<Label text="" />
 						<table:template>
 							<core:Icon src="sap-icon://decline" />
 						</table:template>
-					</table:Column>
+					</table:Column> -->
 					<table:Column minScreenWidth="Tablet" demandPopin="true" 
 						hAlign="Center" width="8rem" filterProperty="seq" sortProperty="seq"
 						filterOperator="EQ">
