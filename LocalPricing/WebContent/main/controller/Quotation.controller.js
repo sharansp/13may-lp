@@ -563,9 +563,6 @@ sap.ui.define([
 		onItemsTableEdit: function (evt) {
 			var oModel = this.oView.getModel('ItemsModel');
 			var modelData = oModel.getData();
-			/*modelData.map(function(element) {
-			   return element.ItemsTableEditable=true;
-			});*/
 			if (evt.getSource().getPressed()) {
 				modelData.map(function(element) {
 			   		return element.ItemsTableEditable=true;
@@ -580,6 +577,10 @@ sap.ui.define([
 				evt.getSource().setText('Edit');
 			};
 			oModel.refresh();
+		},
+
+		calItemsAmount: function(evt){
+			debugger;
 		},
 	});
  

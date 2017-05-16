@@ -59,15 +59,18 @@
 						filterOperator="EQ">
 						<Label text="ITEM" />
 						<table:template>
-							<!-- <ObjectIdentifier text="{ItemsModel>seq}" /> -->
-							<Input type="Number" editable="{ItemsModel>ItemsTableEditable}" value="{ItemsModel>seq}" />
+							<ObjectIdentifier text="{ItemsModel>seq}" />
+							<!-- <Input type="Number" editable="{ItemsModel>ItemsTableEditable}" value="{ItemsModel>seq}" /> -->
 						</table:template>
 					</table:Column>
 					<table:Column width="12em" sortProperty="Product"  filterProperty="Product">
 						<Label text="PROD/SERVICE" />
 						<table:template>
-							<ObjectIdentifier title="{ItemsModel>text}"
-								text="{ItemsModel>Product}" />
+							<!-- <ObjectIdentifier title="{ItemsModel>text}"
+								text="{ItemsModel>Product}" /> -->
+
+								<Input editable="{ItemsModel>ItemsTableEditable}" value="{ItemsModel>text}" />
+
 						</table:template>
 					</table:Column>
 					<table:Column minScreenWidth="Tablet" demandPopin="true"
@@ -93,14 +96,16 @@
 								</HBox>
 								
 
-							<!--  -->
+							<!-- number="{ path: '{ItemsModel>extendedPrice}', formatter: '.calItemsAmount' }" -->
 						</table:template>
 					</table:Column>
-					<table:Column hAlign="Center" sortProperty="extendedPrice" filterProperty="extendedPrice" >
+					<table:Column hAlign="Center"  >
 						<Label text="AMOUNT" />
 						<table:template>
 						<ObjectNumber
-								number="{ItemsModel>extendedPrice}" />
+							number="{ItemsModel>extendedPrice}"
+								/>
+
 						</table:template>
 					</table:Column>
 
